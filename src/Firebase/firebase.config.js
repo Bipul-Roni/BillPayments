@@ -4,12 +4,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAQ_21MZbbc_eyomujDq_jVMWK3frcyGkE",
-  authDomain: "bill-payment-85968.firebaseapp.com",
-  projectId: "bill-payment-85968",
-  storageBucket: "bill-payment-85968.appspot.com", // fixed
-  messagingSenderId: "1080730550490",
-  appId: "1:1080730550490:web:e94f7b502ab2c514ac25e3"
+  apiKey:import.meta.env.VITE_apiKey,
+  authDomain:import.meta.env.VITE_authDomain,
+  projectId:import.meta.env.VITE_projectId,
+  storageBucket:import.meta.env.VITE_storageBucket,
+  messagingSenderId:import.meta.env.VITE_messagingSenderId,
+  appId:import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

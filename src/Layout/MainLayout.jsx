@@ -5,6 +5,7 @@ import Footer from "../Components/Footer";
 const MainLayout = () => {
   return (
     <>
+    {import.meta.env.VITE_name}
       <Navbar />
       <div className="min-h-[80vh]">
         <Outlet />

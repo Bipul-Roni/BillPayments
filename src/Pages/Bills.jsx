@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
 import billsData from "../../public/billData.json";
+import { Helmet } from "react-helmet";
 
 const Bills = () => {
   const { balance, user } = useContext(AuthContext);
@@ -36,7 +37,10 @@ const Bills = () => {
   };
 
   // Get unique bill types from billsData for dropdown options
-  const billTypes = ["All", ...new Set(billsData.map((bill) => bill.bill_type))];
+  const billTypes = [
+    "All",
+    ...new Set(billsData.map((bill) => bill.bill_type)),
+  ];
 
   // Filter bills by selected bill type
   const filteredBills =
@@ -72,33 +76,41 @@ const Bills = () => {
         const isPaid = paidBills.includes(bill.id);
 
         return (
-          <div
-            key={bill.id}
-            className="flex items-center p-4 rounded shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
-          >
-            <img
-              src={bill.icon}
-              alt={bill.bill_type}
-              className="w-12 h-12 mr-4"
-            />
-            <div className="flex-1">
-              <h3 className="font-semibold text-lg">{bill.organization}</h3>
-              <p className="text-sm text-gray-600">Type: {bill.bill_type}</p>
-              <p className="text-sm text-gray-600">Amount: {bill.amount} BDT</p>
-              <p className="text-sm text-gray-600">Due: {bill.due_date}</p>
-            </div>
-            <button
-              onClick={() => handlePay(bill)}
-              className={`flex items-center justify-center gap-2 px-4 py-2 rounded text-white ${
-                isPaid
-                  ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-blue-600 hover:bg-blue-700"
-              }`}
-              disabled={isPaid}
+          <div>
+            <Helmet>
+              <title>Your All Bill</title>
+            </Helmet>
+
+            <div
+              key={bill.id}
+              className="flex items-center p-4 rounded shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
             >
-              {isPaid ? "Paid" : "See Details"}
-              {isPaid && <span className="text-xl">✅</span>}
-            </button>
+              <img
+                src={bill.icon}
+                alt={bill.bill_type}
+                className="w-12 h-12 mr-4"
+              />
+              <div className="flex-1">
+                <h3 className="font-semibold text-lg">{bill.organization}</h3>
+                <p className="text-sm text-gray-600">Type: {bill.bill_type}</p>
+                <p className="text-sm text-gray-600">
+                  Amount: {bill.amount} BDT
+                </p>
+                <p className="text-sm text-gray-600">Due: {bill.due_date}</p>
+              </div>
+              <button
+                onClick={() => handlePay(bill)}
+                className={`flex items-center justify-center gap-2 px-4 py-2 rounded text-white ${
+                  isPaid
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-blue-600 hover:bg-blue-700"
+                }`}
+                disabled={isPaid}
+              >
+                {isPaid ? "Paid" : "See Details"}
+                {isPaid && <span className="text-xl">✅</span>}
+              </button>
+            </div>
           </div>
         );
       })}
