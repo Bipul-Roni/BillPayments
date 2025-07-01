@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "bill_type": "electricity",
+    "icon": "https://img.icons8.com/fluency/48/000000/electricity.png",
+    "organization": "DESCO",
+    "amount": 1890,
+    "due_date": "2025-07-22"
+  },
+  {
+    "id": 2,
+    "bill_type": "gas",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/6/61/Titas_Gas_logo.png/250px-Titas_Gas_logo.png",
+    "organization": "Titas",
+    "amount": 1488,
+    "due_date": "2025-07-28"
+  },
+  {
+    "id": 3,
+    "bill_type": "water",
+    "icon": "https://img.icons8.com/fluency/48/000000/water.png",
+    "organization": "WASA",
+    "amount": 780,
+    "due_date": "2025-07-20"
+  },
+  {
+    "id": 4,
+    "bill_type": "internet",
+    "icon": "https://img.icons8.com/fluency/48/000000/wifi.png",
+    "organization": "GP",
+    "amount": 1200,
+    "due_date": "2025-07-25"
+  }
+]
