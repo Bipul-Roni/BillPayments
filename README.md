@@ -7,7 +7,7 @@ This is a submission for Programming Hero Assignment 9.
 
 ## 🌐 Live Website
 
-👉 [Visit Live App](https://your-live-url.netlify.app)  
+👉 [Visit Live App](https://gilded-dieffenbachia-eb7d45.netlify.app/)  
 _Replace this with your actual Netlify/Vercel link._
 
 ---
